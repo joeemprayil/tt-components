@@ -1,0 +1,12 @@
+{
+  "name": "node-webserver",
+  "version": "1.0.0",
+  "description": "A barebones node express webserver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joe916/node-webserver.git"
+  },
+  "devDependencies": {
+    "express": "^4.12.3"
+  }
+}
