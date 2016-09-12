@@ -1,3 +1,7 @@
-<div style="background-color:lightgreen">
-  
+<!-- TodoItem Component Template-->
+
+<div style="background-color:lightgreen;padding:5px;">
+  <input type="text" ng-model="$ctrl.item.description" />
+  <input type="text" ng-model="$ctrl.item.name"  />
+  <a href="" ng-click="$ctrl.delete()">X</a>
 </div>

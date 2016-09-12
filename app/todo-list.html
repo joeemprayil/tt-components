@@ -1,3 +1,16 @@
-<div style="background-color:lightblue">
+<!-- Todolist Component Template-->
 
+<div style="background-color:lightblue;padding:5px;">
+  <ul>
+    <li ng-repeat="listItem in $ctrl.list">
+      <todo-item item="listItem" delete="$ctrl.deleteItem($index)"></todo-item>
+    </li>
+  </ul>
+
+  <div>
+    <label>Add new item:</label>
+    <input type="text" placeholder="description" ng-model="$ctrl.todoItem.description" />
+    <input type="text" placeholder="assignee" ng-model="$ctrl.todoItem.name" />
+    <a href="" ng-click="$ctrl.addItem()">Add</a>
+  </div>
 </div>

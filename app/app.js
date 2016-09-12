@@ -36,5 +36,41 @@ var taskListCtrl = function () {
   };
 };
 
+var todoList = {
+  templateUrl: 'todo-list.html',
+  bindings: {
+    list: '<list'
+  },
+  controller: function() {
+    this.$onChanges = function (changes) {
+      this.list = angular.copy(this.list);
+    };
+
+    this.addItem = function () {
+      this.list.push(this.todoItem);
+      this.todoItem = {};
+    };
+
+    this.deleteItem = function (index) {
+      this.list.splice(index, 1);
+    };
+  }
+};
+
+var todoItem = {
+  templateUrl: 'todo-item.html',
+  bindings: {
+    item: '<item',
+    delete: '&delete'
+  },
+  controller: function () {
+    this.$onChanges = function (changes) {
+      this.item = angular.copy(this.item);
+    };
+  }
+}
+
 angular.module('app', [])
-  .controller('taskListCtrl', taskListCtrl);
+  .controller('taskListCtrl', taskListCtrl)
+  .component('todoList', todoList)
+  .component('todoItem', todoItem);
